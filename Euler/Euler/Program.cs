@@ -22,6 +22,24 @@ namespace Euler
             Console.WriteLine(sum_below);       //prints out result
             Console.Read();
 
+            int[] arr = new int[1000000];
+            int num = 2;
+            arr[num - 2] = 1;
+            arr[num - 1] = 2;
+            int num2 = arr[num];
+
+            int sum = 0;
+            for (int i = 2; arr[i - 1] < 4000000; i++)
+            {
+                arr[i] = arr[(i - 1)] + arr[(i - 2)];
+            }
+            for (int j = 0; j <= arr.Length - 1; j++)
+            {
+                if (arr[j] % 2 == 0)
+                    sum += arr[j];
+            }
+            Console.Write(sum);
+            Console.Read();
         }
     }
 }
